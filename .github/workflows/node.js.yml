@@ -31,4 +31,4 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa root@172.31.30.182
           sudo git pull origin main
-          sudo docker restart nodejs-mysql-app-1
+          sudo docker restart anus-container
