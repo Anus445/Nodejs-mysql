@@ -30,4 +30,5 @@ jobs:
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa root@172.31.30.182
-          sudo docker compose up -d
+          sudo git pull origin main
+          sudo docker restart nodejs-mysql-app-1
