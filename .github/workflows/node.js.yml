@@ -12,7 +12,6 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v3
@@ -29,6 +28,4 @@ jobs:
       run: |
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa root@172.31.91.228
-          sudo git pull origin main
-          sudo docker compose up -d 
+        ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa root@172.31.91.228"sudo git -C ~/Nodejs-mysql pull origin main && sudo docker-compose -f /home/ubuntu/Nodejs-mysql/docker-compose.yml up -d"
