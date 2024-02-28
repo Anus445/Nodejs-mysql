@@ -28,6 +28,4 @@ jobs:
       run: |
         echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa root@172.31.91.228 
-        sudo git pull origin main
-        sudo docker compose up -d
+        ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa root@172.31.91.228 'cd /home/ubuntu/Nodejs-mysql  && sudo git pull origin main && sudo docker-compose up -d'
